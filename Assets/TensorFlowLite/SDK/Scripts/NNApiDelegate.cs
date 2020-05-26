@@ -21,19 +21,6 @@ namespace TensorFlowLite
 {
 #if UNITY_ANDROID && !UNITY_EDITOR
 
-    /// <summary>
-    /// TfLiteGpuDelegateOptionsV2
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Options
-    {
-        int isPrecisionLossAllowed;
-        int inferencePreference;
-        int inferencePriority1;
-        int inferencePriority2;
-        int inferencePriority3;
-    };
-
     public class NNAPIDelegate : IGpuDelegate
     {
         public TfLiteDelegate Delegate { get; private set; }
