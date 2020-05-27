@@ -9,6 +9,7 @@ public class PoseNetSample : MonoBehaviour
 {
     [SerializeField, FilePopup("*.tflite")] string fileName = "posenet_mobilenet_v1_100_257x257_multi_kpt_stripped.tflite";
     [SerializeField] RawImage cameraView = null;
+    [SerializeField] Text debugText = null;
     [SerializeField] GLDrawer glDrawer = null;
     [SerializeField, Range(0f, 1f)] float threshold = 0.5f;
 
@@ -22,7 +23,6 @@ public class PoseNetSample : MonoBehaviour
     {
         string path = Path.Combine(Application.streamingAssetsPath, fileName);
         poseNet = new PoseNet(path);
-
         // Init camera
         string cameraName = WebCamUtil.FindName();
         webcamTexture = new WebCamTexture(cameraName, 640, 480, 30);
@@ -30,6 +30,7 @@ public class PoseNetSample : MonoBehaviour
         cameraView.texture = webcamTexture;
 
         glDrawer.OnDraw += OnGLDraw;
+        debugText.text = poseNet.getPoseNetInfo();
     }
 
     void OnDestroy()
@@ -43,6 +44,7 @@ public class PoseNetSample : MonoBehaviour
     {
         poseNet.Invoke(webcamTexture);
         results = poseNet.GetResults();
+        
 
         // set uv
         cameraView.material = poseNet.transformMat;

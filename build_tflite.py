@@ -64,7 +64,7 @@ if __name__ == '__main__':
     platform_name = platform.system()
 
     if args.macos:
-        assert platform_name is 'Darwin', f'-macos not suppoted on the platfrom: {platform_name}'
+        #assert platform_name is 'Darwin', f'-macos not suppoted on the platfrom: {platform_name}'
         print('Build macOS')
         build_mac()
     
@@ -74,7 +74,7 @@ if __name__ == '__main__':
         build_windows()
     
     if args.ios:
-        assert platform_name is 'Darwin', f'-ios not suppoted on the platfrom: {platform_name}'
+        # assert platform_name is 'Darwin', f'-ios not suppoted on the platfrom: {platform_name}'
         # Need to set iOS build option in ./configure
         print('Build iOS')
         build_ios()

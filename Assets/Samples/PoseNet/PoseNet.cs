@@ -81,6 +81,11 @@ namespace TensorFlowLite
 
         }
 
+        public string getPoseNetInfo()
+        {
+            return interpreter.ToString();
+        }
+
         public override void Invoke(Texture inputTex)
         {
             const float OFFSET = 128f;
