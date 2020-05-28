@@ -171,21 +171,6 @@ namespace TensorFlowLite
         }
 
 
-        /// <summary>
-        /// Returns the gpu delegate we are using
-        /// </summary>
-        /// <returns>A string with the gpu delegate we are using</returns>
-        public string GetDelegateInfo()
-        {
-            if (gpuDelegate != null) {
-
-                return "gpu delegate";
-            } else {
-                return "No gpu delegate";
-            }
-            
-        }
-
         private static string GetTensorName(TfLiteTensor tensor)
         {
             return Marshal.PtrToStringAnsi(TfLiteTensorName(tensor));

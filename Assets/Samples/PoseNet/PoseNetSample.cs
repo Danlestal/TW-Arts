@@ -28,9 +28,7 @@ public class PoseNetSample : MonoBehaviour
         webcamTexture = new WebCamTexture(cameraName, 640, 480, 30);
         webcamTexture.Play();
         cameraView.texture = webcamTexture;
-
         glDrawer.OnDraw += OnGLDraw;
-        debugText.text = poseNet.GetPoseNetInfo();
     }
 
     void OnDestroy()
@@ -45,14 +43,7 @@ public class PoseNetSample : MonoBehaviour
         poseNet.Invoke(webcamTexture);
         results = poseNet.GetResults();
         debugText.text = poseNet.GetInfo();
-        
-
-        // set uv
         cameraView.material = poseNet.transformMat;
-        // cameraView.uvRect = TextureToTensor.GetUVRect(
-        //     (float)webcamTexture.width / webcamTexture.height,
-        //     1,
-        //     TextureToTensor.AspectMode.Fill);
     }
 
 
