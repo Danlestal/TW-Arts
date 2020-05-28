@@ -8,6 +8,8 @@ namespace TensorFlowLite
     public abstract class BaseImagePredictor<T> : System.IDisposable
     {
         protected Interpreter interpreter;
+
+        private Interpreter.Options options;
         protected int width;
         protected int height;
         protected int channels;
@@ -26,7 +28,7 @@ namespace TensorFlowLite
 
         public BaseImagePredictor(string modelPath, bool useGPU = true)
         {
-            var options = new Interpreter.Options()
+            this.options = new Interpreter.Options()
             {
                 threads = 2,
                 gpuDelegate = useGPU ? CreateGpuDelegate() : null,
@@ -51,6 +53,15 @@ namespace TensorFlowLite
         {
             interpreter?.Dispose();
             tex2tensor?.Dispose();
+        }
+
+        public string GetInfo() {
+            string gpuDelegateString = "None";
+            if (this.options.gpuDelegate != null) {
+                gpuDelegateString = this.options.gpuDelegate.ToString();
+            }
+
+            return string.Format("num threads: {0}  delegate: {1}", this.options.threads, gpuDelegateString);
         }
 
 

@@ -30,7 +30,7 @@ public class PoseNetSample : MonoBehaviour
         cameraView.texture = webcamTexture;
 
         glDrawer.OnDraw += OnGLDraw;
-        debugText.text = poseNet.getPoseNetInfo();
+        debugText.text = poseNet.GetPoseNetInfo();
     }
 
     void OnDestroy()
@@ -44,6 +44,7 @@ public class PoseNetSample : MonoBehaviour
     {
         poseNet.Invoke(webcamTexture);
         results = poseNet.GetResults();
+        debugText.text = poseNet.GetInfo();
         
 
         // set uv

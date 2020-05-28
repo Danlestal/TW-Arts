@@ -50,6 +50,10 @@ namespace TensorFlowLite
             Delegate = TfLiteDelegate.Zero;
         }
 
+        public override string ToString(){
+            return "GPU Delegate";
+        }
+
     #region Externs
         private const string TensorFlowLibraryGPU = "libtensorflowlite_gpu_delegate";
 

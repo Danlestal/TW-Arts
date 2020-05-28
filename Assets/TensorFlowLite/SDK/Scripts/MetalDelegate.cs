@@ -54,6 +54,10 @@ namespace TensorFlowLite
             Delegate = TfLiteDelegate.Zero;
         }
 
+        public override string ToString(){
+            return "GPU Metal Delegate";
+        }
+
         #region Externs
 
 #if UNITY_IOS && !UNITY_EDITOR

@@ -69,9 +69,6 @@ namespace TensorFlowLite
         float[,,] outputs0; // heatmap
         float[,,] outputs1; // offset
 
-        // float[] outputs2 = new float[9 * 9 * 32]; // displacement fwd
-        // float[] outputs3 = new float[9 * 9 * 32]; // displacement bwd
-
         public PoseNet(string modelPath) : base(modelPath)
         {
             var odim0 = interpreter.GetOutputTensorInfo(0).shape;
@@ -81,9 +78,9 @@ namespace TensorFlowLite
 
         }
 
-        public string getPoseNetInfo()
+        public string GetPoseNetInfo()
         {
-            return interpreter.ToString();
+            return interpreter.GetDelegateInfo();
         }
 
         public override void Invoke(Texture inputTex)
@@ -96,9 +93,6 @@ namespace TensorFlowLite
             interpreter.Invoke();
             interpreter.GetOutputTensorData(0, outputs0);
             interpreter.GetOutputTensorData(1, outputs1);
-            // not using
-            // interpreter.GetOutputTensorData(2, outputs2);
-            // interpreter.GetOutputTensorData(3, outputs3);
         }
 
         public Result[] GetResults()

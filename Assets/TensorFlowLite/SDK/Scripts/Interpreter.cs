@@ -178,7 +178,8 @@ namespace TensorFlowLite
         public string GetDelegateInfo()
         {
             if (gpuDelegate != null) {
-                return gpuDelegate.ToString();
+
+                return "gpu delegate";
             } else {
                 return "No gpu delegate";
             }
