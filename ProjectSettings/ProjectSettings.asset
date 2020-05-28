@@ -166,7 +166,7 @@ PlayerSettings:
     Android: com.asus4.tfliteunitysample
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 27
+  AndroidMinSdkVersion: 28
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
