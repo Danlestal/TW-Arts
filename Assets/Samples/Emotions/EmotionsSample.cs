@@ -27,7 +27,7 @@ public class EmotionsSample : MonoBehaviour
     {
         emoNet.Invoke(webcamTexture);
         var results = emoNet.GetResults();
-        emotionName.text = results[0].ToString();
+        emotionName.text = EmotionResultsMapper.map(results);
     }
 
     private void initCamera(){

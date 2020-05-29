@@ -1,0 +1,17 @@
+{
+    "name": "emotions",
+    "references": [
+        "GUID:343deaaf83e0cee4ca978e7df0b80d21",
+        "GUID:538230b8a6cfe4c0db1c109572eb8dd8",
+        "GUID:f9e22d967423442c2bdb75cb8bd8232f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
