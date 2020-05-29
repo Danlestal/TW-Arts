@@ -64,3 +64,7 @@ crashlytics-build.properties
 
 build.app  
 android.apk
+.Rhistory
+.vscode/settings.json
+.DS_Store
+Assets/Samples/.DS_Store

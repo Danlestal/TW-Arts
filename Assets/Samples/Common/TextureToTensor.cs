@@ -128,8 +128,9 @@ namespace TensorFlowLite
                 int y = i / width;
                 int x = i % width;
                 inputs[y, x, 0] = (pixels[i].r - offset) * scale;
-                inputs[y, x, 1] = (pixels[i].g - offset) * scale;
-                inputs[y, x, 2] = (pixels[i].b - offset) * scale;
+                // TODO
+                // inputs[y, x, 1] = (pixels[i].g - offset) * scale;
+                // inputs[y, x, 2] = (pixels[i].b - offset) * scale;
             }
         }
 
