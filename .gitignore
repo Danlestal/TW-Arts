@@ -68,3 +68,4 @@ android.apk
 .vscode/settings.json
 .DS_Store
 Assets/Samples/.DS_Store
+.idea
