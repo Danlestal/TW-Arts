@@ -1,3 +1,5 @@
+using TensorFlowLite;
+
 public static class EmotionResultsMapper {
 
     public static string map(float[] results) {
@@ -5,14 +7,27 @@ public static class EmotionResultsMapper {
             return "Error: NN output has incorrect dimensions";
         }
 
-        return string.Format("ANGRY:{0} DISGUST:{1} SCARED:{2} HAPPY:{3}    SAD:{4} SURPRISED:{5} NEUTRAL:{6}",
+        float maxValue = -1;
+        int maxFeelingIndex = -1;
+        for (int i = 0; i < results.Length; i++)
+        {
+            if (results[i] >= maxValue)
+            {
+                maxValue = results[i];
+                maxFeelingIndex = i;
+            }
+        }
+
+        var emotion = (EmoNet.Emotion) maxFeelingIndex;
+        return string.Format("ANGRY: {0} \nDISGUST: {1} \nSCARED: {2} \nHAPPY: {3} \nSAD: {4} \nSURPRISED: {5} \nNEUTRAL: {6}\n\nCURRENT EMOTION:{7}\n ",
                                 results[0],
                                 results[1],
                                 results[2],
                                 results[3],
                                 results[4],
                                 results[5],
-                                results[6]);
+                                results[6],
+                                emotion.ToString());
     }
     
 }
