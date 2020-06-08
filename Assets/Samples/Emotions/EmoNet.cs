@@ -4,15 +4,16 @@ namespace TensorFlowLite
 
     public class EmoNet : BaseImagePredictor<float>
     {
+        
         public enum Emotion
         {
             ANGRY = 0,
             DISGUST,
             SCARED,
             HAPPY,
+            NEUTRAL,
             SAD,
             SURPRISED,
-            NEUTRAL,
             NUMBER_OF_TYPES
         }
 
@@ -38,5 +39,4 @@ namespace TensorFlowLite
           return emotionsOutput;
         }
     }
-
 }

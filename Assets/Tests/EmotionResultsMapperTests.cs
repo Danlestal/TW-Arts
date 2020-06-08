@@ -31,7 +31,7 @@ namespace Tests
                                             0.7f};
 
             var result = EmotionResultsMapper.map(neuralNetworkResults);
-            string expectedHumanResult = "ANGRY: 0.1 \nDISGUST: 0.2 \nSCARED: 0.3 \nHAPPY: 0.4 \nSAD: 0.5\nSURPRISED: 0.6 \nNEUTRAL:0.7:\n\nCURRENT EMOTION:NEUTRAL\n ";
+            string expectedHumanResult = "ANGRY: 0.1 \nDISGUST: 0.2 \nSCARED: 0.3 \nHAPPY: 0.4 \nNEUTRAL: 0.5\nSAD: 0.6 \nSURPRISED:0.7:\n\nCURRENT EMOTION:SURPRISED\n ";
 
             Assert.AreEqual(expectedHumanResult, result);
         }
