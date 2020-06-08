@@ -17,9 +17,9 @@ public static class EmotionResultsMapper {
                 maxFeelingIndex = i;
             }
         }
-
+        
         var emotion = (EmoNet.Emotion) maxFeelingIndex;
-        return string.Format("ANGRY: {0} \nDISGUST: {1} \nSCARED: {2} \nHAPPY: {3} \nSAD: {4} \nSURPRISED: {5} \nNEUTRAL: {6}\n\nCURRENT EMOTION:{7}\n ",
+        return string.Format("ANGRY: {0} \nDISGUST: {1} \nSCARED: {2} \nHAPPY: {3} \nSAD: {4}\nSURPRISED: {5} \nNEUTRAL:{6}:\n\nCURRENT EMOTION:{7}\n ",
                                 results[0],
                                 results[1],
                                 results[2],

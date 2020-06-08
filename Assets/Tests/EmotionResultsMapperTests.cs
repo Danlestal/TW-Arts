@@ -20,6 +20,7 @@ namespace Tests
         [Test]
         public void MapSuccess()
         {
+            
             float[] neuralNetworkResults =  {
                                             0.1f,
                                             0.2f,
@@ -30,7 +31,7 @@ namespace Tests
                                             0.7f};
 
             var result = EmotionResultsMapper.map(neuralNetworkResults);
-            string expectedHumanResult = "ANGRY:0.1 DISGUST:0.2 SCARED:0.3 HAPPY:0.4    SAD:0.5 SURPRISED:0.6 NEUTRAL:0.7";
+            string expectedHumanResult = "ANGRY: 0.1 \nDISGUST: 0.2 \nSCARED: 0.3 \nHAPPY: 0.4 \nSAD: 0.5\nSURPRISED: 0.6 \nNEUTRAL:0.7:\n\nCURRENT EMOTION:NEUTRAL\n ";
 
             Assert.AreEqual(expectedHumanResult, result);
         }
